@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/basic-library-template-repo.iml" filepath="$PROJECT_DIR$/.idea/basic-library-template-repo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rollup-plugin-wasm-bindgen-web.iml" filepath="$PROJECT_DIR$/.idea/rollup-plugin-wasm-bindgen-web.iml" />
     </modules>
   </component>
 </project>
