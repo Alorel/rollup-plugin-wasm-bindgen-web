@@ -308,6 +308,10 @@ function createConfig(rollupConfig) {
         },
         {
           from: 'README.md',
+          opts: {glob: {cwd: __dirname}}
+        },
+        {
+          from: 'autoinit-wasm-import.js',
           opts: {glob: {cwd: projectDir}}
         }
       ],
