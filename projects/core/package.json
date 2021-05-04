@@ -1,5 +1,26 @@
 {
-  "name": "@alorel/xxxxxxxxxx",
+  "name": "@alorel/rollup-plugin-wasm-bindgen-web",
   "version": "0.0.0",
-  "description": "xxxxxxxxxx"
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "description": "Rollup plugin for loading wasm files created through wasm-bindgen",
+  "dependencies": {
+    "@rollup/pluginutils": "^4.0.0",
+    "estree-walker": "^2.0.2",
+    "magic-string": "^0.25.7"
+  },
+  "peerDependencies": {
+    "rollup": "^2.40.0"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Alorel/rollup-plugin-wasm-bindgen-web.git",
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
+  "author": "Arturas Molcanovas <a.molcanovas@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  }
 }

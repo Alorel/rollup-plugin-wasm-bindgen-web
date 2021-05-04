@@ -5,6 +5,9 @@ module.exports = {
   ],
   ignorePatterns: [
     '**/.eslintrc.js',
+    '/projects/*/fixture-output',
+    '/projects/core/test-input.js',
+    '/projects/core/autoinit-wasm-import.js',
     '/dist',
     '/coverage',
     '/**/*.d.ts',

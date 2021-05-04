@@ -96,6 +96,7 @@ function _buildSyncPkgJson(fields) {
 const _buildPkgDefaultSyncFields = [
   'version',
   'main',
+  'engines',
   'module',
   'esm5',
   'fesm5',
