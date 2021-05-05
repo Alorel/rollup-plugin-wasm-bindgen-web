@@ -27,7 +27,7 @@ module.exports = {
         'package-lock.json',
         ...projectNames.flatMap(n => [`projects/${n}/package.json`, `projects/${n}.README.md`])
       ],
-      message: 'chore(release): ${nextRelease.version}',
+      message: 'chore(release): ${nextRelease.version}\n\n[ci skip]',
       path: '@semantic-release/git'
     },
     exec('npm run rollup')
