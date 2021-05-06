@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/compare/1.0.1...1.1.0) (2021-05-06)
+
+
+### Features
+
+* Add exposeWasm option ([b7b4421](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/commit/b7b4421577d4d0068221e2888c444be55ff712ea))
+
 ## [1.0.1](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/compare/1.0.0...1.0.1) (2021-05-06)
 
 
