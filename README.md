@@ -103,12 +103,12 @@ Promise
 # The plugin config
 
 ```javascript
-import {wasmBindgenPlugin} from '@alorel/rollup-plugin-wasm-bindgen-web';
+import {wasmBindgen} from '@alorel/rollup-plugin-wasm-bindgen-web';
 
 export default {
   // ... your config
   plugins: [
-    wasmBindgenPlugin(config)
+    wasmBindgen(config)
   ]
 }
 ```
