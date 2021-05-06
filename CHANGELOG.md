@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/compare/1.0.0...1.0.1) (2021-05-06)
+
+
+### Documentation
+
+* Fixed the import name in the README ([47df3ac](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/commit/47df3acf59107e296dbe40b85f2ebfdb25514416))
+
 # 1.0.0 (2021-05-05)
 
 

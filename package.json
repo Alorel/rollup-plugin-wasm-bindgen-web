@@ -4,7 +4,7 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monorepo root",
   "main": "index.js",
   "repository": "https://github.com/Alorel/rollup-plugin-wasm-bindgen-web.git",
