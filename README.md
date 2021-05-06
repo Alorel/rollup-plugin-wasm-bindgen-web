@@ -19,6 +19,8 @@ to breaking changes, although any such changes will follow semantic versioning.
 - [Requirements & basic setup](#requirements--basic-setup)
 - [The transformation](#the-transformation)
 - [The plugin config](#the-plugin-config)
+  - [Filtering](#filtering)
+  - [Raw wasm output](#raw-wasm-output)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -127,6 +129,13 @@ interface Filter {
 interface Opts {
 
   /**
+   * When set to true, adds a __getWasm() function to the import() response which returns what the original
+   * init function returned
+   * @default false
+   */
+  exposeWasm?: boolean;
+
+  /**
    * JS source files to look for dynamic imports in.
    * @default {include: /\.[jt]sx?$/}
    */
@@ -146,7 +155,22 @@ interface Opts {
 }
 ```
 
+## Filtering
+
 There are two sets of files to match. Using the `my_lib` example from earlier,
 
 - `wasmFilter` should match `my_lib.js`
 - `jsFilter` should match files that'll contain the dynamic `import()`s
+
+## Raw wasm output
+
+By default, the response of the original init function is hidden. You can turn the `exposeWasm` option on to append
+a `__getWasm` function to the module which will return it. If you're using Typescript, you can correct your typings by
+adding the following to your Rust source files (constant name doesn't matter):
+
+```rust
+#[wasm_bindgen(typescript_custom_section)]
+const TS_APPEND_CONTENT: &'static str = r#"
+export function __getWasm(): InitOutput;
+"#;
+```

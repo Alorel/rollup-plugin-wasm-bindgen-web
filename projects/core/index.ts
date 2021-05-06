@@ -34,6 +34,13 @@ interface Filter {
 interface Opts {
 
   /**
+   * When set to true, adds a __getWasm() function to the import() response which returns what the original
+   * init function returned
+   * @default false
+   */
+  exposeWasm?: boolean;
+
+  /**
    * JS source files to look for dynamic imports in.
    * @default {include: /\.[jt]sx?$/}
    */
@@ -54,6 +61,7 @@ interface Opts {
 
 function wasmBindgenPlugin(opts: Opts): Plugin { // eslint-disable-line max-lines-per-function
   const {
+    exposeWasm = false,
     jsFilter = {
       include: /\.[jt]sx?$/
     },
@@ -67,6 +75,7 @@ function wasmBindgenPlugin(opts: Opts): Plugin { // eslint-disable-line max-line
   const returnTransformResult: (ms: MagicString) => TransformResult = sourceMap ?
     (ms => ({code: ms.toString(), map: ms.generateMap()})) :
     (ms => ({code: ms.toString(), map: {mappings: ''}}));
+  const exposeWasmStr = String(exposeWasm);
 
   return {
     name: 'rollup-plugin-wasm-bindgen-web',
@@ -115,8 +124,8 @@ function wasmBindgenPlugin(opts: Opts): Plugin { // eslint-disable-line max-line
             source,
             type: 'asset'
           });
-          ms.prependLeft(node.start, `${Strings.ImportName}(\n`);
-          ms.appendRight(node.end, `,\nimport.meta.ROLLUP_FILE_URL_${assetId}\n)`);
+          ms.prependLeft(node.start, `${Strings.ImportName}(`);
+          ms.appendRight(node.end, `, import.meta.ROLLUP_FILE_URL_${assetId}, ${exposeWasmStr})`);
         })
       );
 
