@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/compare/1.1.0...1.1.1) (2021-05-06)
+
+
+### Bug Fixes
+
+* Add wasm file to watched files ([1a86b10](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/commit/1a86b10cfb99f19c4d08684a6ed9d4b5f711aaec))
+
 # [1.1.0](https://github.com/Alorel/rollup-plugin-wasm-bindgen-web/compare/1.0.1...1.1.0) (2021-05-06)
 
 
