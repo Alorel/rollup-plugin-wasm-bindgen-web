@@ -118,6 +118,7 @@ function wasmBindgenPlugin(opts: Opts): Plugin { // eslint-disable-line max-line
       await Promise.all(
         importExpressions.map(async ({id: wasmBridgeId, node}) => {
           const [name, wasmPath] = resolveWasmFile(wasmBridgeId);
+          this.addWatchFile(wasmPath);
           const source = await wasmLoader.load(wasmPath);
           const assetId = this.emitFile({
             name,
